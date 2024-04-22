@@ -1,0 +1,24 @@
+{% load static %}
+<header class="relative max-w-[300px] min-h-screen w-20 hover:w-full ease-in-out duration-300 h-full bg-blue-500/20 group">
+    <figure class="h-full min-h-20 max-h-20 w-full flex items-center justify-center">
+        <img src="{% static 'images/logo.png' %}" class="group-hover:block hidden" alt="logo" /><img src="{% static 'images/small_logo.png' %}" class="group-hover:hidden object-contain p-2" alt="logo" />
+    </figure>
+    <ul class=" w-full">
+        <li class="bg-white hover:bg-gray-500">
+            <a href="" class="flex gap-5 items-center p-5">
+                <figure class="w-full h-full max-w-12 max-h-12 ">
+                    <img src="" class="w-full h-full object-contain" />
+                </figure>
+                <span class="hidden group-hover:block font-semibold">Dashboard</span>
+            </a>
+        </li>
+        <li class="bg-white hover:bg-gray-500 [&:last-child]:absolute w-full bottom-0">
+            <a href="" class="flex gap-5 items-center p-5">
+                <figure class="w-full h-full max-w-12 max-h-12 ">
+                    <img src="" class="w-full h-full object-contain" />
+                </figure>
+                <span class="hidden group-hover:block font-semibold">Logout</span>
+            </a>
+        </li>
+    </ul>
+</header>
