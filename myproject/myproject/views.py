@@ -1,7 +1,26 @@
 # from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import User
 
-def homepage(request):
+def login(request):
+    if request.method == 'POST':
+        username = request.POST['username']
+        password = request.POST['password']
+
+        user = User.objects.filter(username=username, password =password).first()
+        if user:
+            return redirect('dashboard')
+        else:
+            return render(request, 'login.html', {'error': 'Invalid username or password'})
+    return render(request, 'loginPage')
+
+def logout(request): 
+    return redirect('login')
+
+# Pages
+
+
+def homePage(request):
     stepcount = [
     { "y": 10560, "label":"Sunday" },
     { "y": 9060, "label":"Monday" },
@@ -14,12 +33,14 @@ def homepage(request):
   
     return render(request, 'index.html', { "stepcount": stepcount })    
 
+def loginPage(request):
+    return render(request, 'login.html')
 
-def about(request):
+def aboutPage(request):
     return render(request, 'about.html')
 
-def settings(request):
+def settingsPage(request):
     return render(request, 'settings.html')
 
-def notifications(request):
+def notificationsPage(request):
     return render(request, 'notification.html')

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+
+<body class="w-full h-screen flex items-center justify-center overflow-hidden" x-data="{open:true}">
+    <figure :class="{'top-[500px] rotate-90':!open}"
+        class="absolute duration-1000 ease-in-out -right-80 top-0 size-full max-w-fit">
+        <img src="{% static 'images/right.svg' %}" class="size-full " alt="">
+    </figure>
+    <figure :class="{'bottom-[500px] rotate-[10deg] ':!open}"
+        class="absolute duration-1000 ease-in-out left-0 bottom-0 size-full max-w-fit">
+        <img src="{% static 'images/left.svg' %}" class="size-full " alt="">
+    </figure>
+    <main
+        class="z-20 w-4/5 md:w-3/5 h-4/5 md:h-4/5 m-auto shadow-2xl rounded-xl bg-[#FFFFFF] overflow-hidden p-5 flex flex-col">
+        <div class="h-full max-h-10 flex  justify-start">
+            <figure class="size-full max-h-10 max-w-40">
+                <img src="{% static 'images/logo.png' %}" class="size-full object-contain" alt="">
+            </figure>
+        </div>
+        <div class="size-full duration-1000 ease-in-out flex  gap-5 ">
+            <div :class="{'translate-x-full ':!open}"
+                class="z-50 bg-white size-full duration-1000 ease-in-out overflow-hidden">
+                <div class="p-5 flex justify-center flex-col gap-5">
+                    <h1 x-show="open" class="text-center font-bold text-4xl">FIELD MONITORING</h1>
+                    <h1 x-show="!open" class="text-center font-bold text-4xl">TERMS & CONDITIONS</h1>
+                    <p x-show="open" class="text-center text-sm">We don't do it, If we are not the number #1</p>
+                    <figure class="size-full flex justify-center">
+                        <img src="{% static 'images/login.svg' %}" alt="">
+                    </figure>
+                </div>
+
+                <button @click="open = !open" x-show="!open"
+                    class="block w-full text-center duration-1000 ease-in-out ">Can't Login?</button>
+            </div>
+            <div class="size-full bg-white" :class="{'translate-x-full ':!open}">
+                <div x-show="!open" :class="{'-translate-x-full': !open}">
+                    <ul class="list-disc">
+                        <li>This system is conducted solely for the purpose of
+                            real-time monitoring the accounts.</li>
+                        <li> Any information gathered through monitoring
+                            will be treated as confidential and will only be disclosed
+                            to authorized individuals or entities as
+                            required by law or with your explicit consent.</li>
+                        <li>These terms and conditions shall be governed by
+                            and construed in accordance with the laws of SP Madrid</li>
+                    </ul>
+                </div>
+                <div class="w-3/5 h-full m-auto flex flex-col justify-around">
+                    <div class="flex flex-col gap-5">
+                        <h1 class="row-span-1 relative text-2xl py-5">WELCOME BACK!
+                            <span
+                                class="border-black h-[2px] bg-blue-200 w-full absolute left-0 w-full bottom-0"></span>
+                        </h1>
+                        <form action="" class="row-span-3 flex flex-col gap-5 ">
+                            <div class="w-full h-full">
+                                <label for="username" class="uppercase text-xs">Username:</label>
+                                <div class="relative h-full h-full max-h-14 m-auto rounded-md overflow-hidden">
+                                    <input type="text"
+                                        class="pl-16 py-3 size-full border text-gray-500 bg-[#D9D9D9] outline-none">
+                                    <figure
+                                        class="absolute top-0 left-0 size-full flex items-center max-w-fit px-4 border-r border-white">
+                                        <img src="{% static 'images/user.svg' %}" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="w-full h-full">
+                                <label for="password" class="uppercase text-xs">Password:</label>
+                                <div class="relative h-full h-full max-h-14 m-auto rounded-md overflow-hidden">
+                                    <input type="text"
+                                        class="pl-16 py-3 size-full border text-gray-500 bg-[#D9D9D9] outline-none">
+                                    <figure
+                                        class="absolute top-0 left-0 size-full flex items-center max-w-fit px-4 border-r border-white">
+                                        <img src="{% static 'images/pass.svg' %}" alt="">
+                                    </figure>
+                                </div>
+                            </div>
+                            <div class="flex justify-between w-[95%] m-auto py-2">
+                                <div class="">
+                                    <div class="flex gap-2">
+                                        <input type="checkbox">
+                                        <label for="" class="text-sm">
+                                            <button type="button" @click="open = !open"
+                                                class="text-[#1A3D6C] hover:underline">
+                                                Terms & Conditions
+                                            </button>
+                                        </label>
+                                    </div>
+                                </div>
+                                <span class="border-l border-black border-1"></span>
+                                <div class="">
+                                    <a href="" class="flex items-center gap-2 text-sm">
+                                        <figure>
+                                            <img src="{% static 'images/lark.svg' %}" alt="">
+                                        </figure>
+                                        <span class="text-[#1A3D6C] hover:underline">Login with Lark</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="w-3/5 m-auto h-full">
+                                <button
+                                    class="size-full max-h-20 bg-[#1A3D6C] text-white font-regular tracking-wider border rounded-md">
+                                    <p class="py-2">Login</p>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                    <button :class="{'-translate-x-full':!open}" class="duration-1000 ease-in-out ">Can't
+                        Login?</button>
+                </div>
+            </div>
+        </div>
+        <div class="text-center text-sm">2024 S.P. Madrid | <a href=""
+                class="text-[#1A3D6C] font-semibold">Developer</a></div>
+    </main>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>

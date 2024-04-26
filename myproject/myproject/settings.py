@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    "django_browser_reload"
+    "django_browser_reload",
+    "myproject"
 ]
 
 MIDDLEWARE = [
@@ -77,10 +78,15 @@ WSGI_APPLICATION = 'myproject.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'monitoring',
+        'USER': 'postgres',
+        'PASSWORD': '$PMadr!d1234',
+        'HOST': 'localhost',  # or your database host
+        'PORT': '5432',           # or your database port
     }
 }
+
 
 
 # Password validation

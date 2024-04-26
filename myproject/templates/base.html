@@ -13,12 +13,15 @@
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
 </head>
 
-<body class="w-screen h-full flex">
+<body class="w-screen h-full flex" x-data="{open_menu:false}">
   {% include 'components/sidebar.html' %}
   {% block content %}
   {% endblock %}
+
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>
