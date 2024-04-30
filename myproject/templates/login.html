@@ -17,8 +17,8 @@
         class="absolute duration-1000 ease-in-out -right-80 top-0 size-full max-w-fit">
         <img src="{% static 'images/right.svg' %}" class="size-full " alt="">
     </figure>
-    <figure :class="{'bottom-[500px] rotate-[10deg] ':!open}"
-        class="absolute duration-1000 ease-in-out left-0 bottom-0 size-full max-w-fit">
+    <figure :class="{'bottom-[500px] rotate-[30deg] ':!open}"
+        class="absolute duration-1000 ease-in-out -left-40 -bottom-40 size-full max-w-fit">
         <img src="{% static 'images/left.svg' %}" class="size-full " alt="">
     </figure>
     <main
@@ -32,9 +32,9 @@
             <div :class="{'translate-x-full ':!open}"
                 class="z-50 bg-white size-full duration-1000 ease-in-out flex items-center overflow-hidden">
                 <div class="p-5 flex justify-center flex-col items-center gap-5">
-                    <h1 x-show="open" class="text-center font-bold text-4xl">FIELD MONITORING</h1>
-                    <h1 x-show="!open" class="text-center font-bold text-4xl">TERMS & CONDITIONS</h1>
-                    <p x-show="open" class="text-center text-sm">We don't do it, If we are not the number #1</p>
+                    <h1 x-show="open" class="text-center font-redrose text-4xl">FIELD MONITORING</h1>
+                    <h1 x-show="!open" class="text-center font-redrose text-4xl">TERMS & CONDITIONS</h1>
+                    <p x-show="open" class="text-center font-regular text-sm">We don't do it, If we are not the number #1</p>
                     <figure class="size-full flex justify-center">
                         <img src="{% static 'images/login.svg' %}" alt="">
                     </figure>
@@ -55,22 +55,20 @@
                             and construed in accordance with the laws of SP Madrid</li>
                     </ul>
                     <button @click="open = !open" x-show="!open"
-                        class="block h-full max-h-40 w-full text-center duration-1000 ease-in-out font-semibold">Back
-                        to
-                        Login</button>
+                        class="block h-full max-h-40 w-full text-center text-[#173D68] duration-1000 ease-in-out font-semibold">Got it!</button>
                    </div>
                 </div>
 
                 <div class="size-full flex flex-col justify-center items-center">
                     <div class="w-3/5 h-fit m-auto flex flex-col justify-around duration-300 ease-in-out" :class="{'opacity-0':!open}">
                         <div class="flex flex-col gap-5">
-                            <h1 class="row-span-1 relative text-2xl py-5 font-redrose text-500/20">WELCOME BACK!
+                            <h1 class="row-span-1 relative text-2xl py-5 font-redrose text-gray-500/80">WELCOME BACK!
                                 <span
                                     class="border-black h-[2px] bg-blue-200 w-full absolute left-0 w-full bottom-0"></span>
                             </h1>
                             <form action="" class="row-span-3 flex flex-col gap-5 ">
                                 <div class="w-full h-full">
-                                    <label for="username" class="uppercase text-xs">Username:</label>
+                                    <label for="username" class="uppercase font-redrose text-xs">Username:</label>
                                     <div class="relative h-full h-full max-h-14 m-auto rounded-md overflow-hidden">
                                         <input type="text"
                                             class="pl-16 py-3 size-full border text-gray-500 bg-[#D9D9D9] outline-none">
@@ -81,7 +79,7 @@
                                     </div>
                                 </div>
                                 <div class="w-full h-full">
-                                    <label for="password" class="uppercase text-xs">Password:</label>
+                                    <label for="password" class="uppercase font-redrose text-xs">Password:</label>
                                     <div class="relative h-full h-full max-h-14 m-auto rounded-md overflow-hidden">
                                         <input type="text"
                                             class="pl-16 py-3 size-full border text-gray-500 bg-[#D9D9D9] outline-none">
@@ -97,7 +95,7 @@
                                             <input type="checkbox">
                                             <label for="" class="text-sm">
                                                 <button type="button" @click="open = !open"
-                                                    class="text-[#1A3D6C] hover:underline">
+                                                    class="text-[#1A3D6C] font-regular hover:underline">
                                                     Terms & Conditions
                                                 </button>
                                             </label>
@@ -110,7 +108,7 @@
                                         <figure>
                                             <img src="{% static 'images/lark.svg' %}" alt="">
                                         </figure>
-                                        <p class="py-2">Login</p>
+                                        <p class="py-2 font-regular">Login</p>
                                     </button>
                                 </div>
                             </form>
@@ -123,7 +121,7 @@
             </div>
         </div>
         <div class="text-center text-sm">2024 S.P. Madrid | <a href=""
-                class="text-[#1A3D6C] font-semibold">Developer</a></div>
+                class="text-[#5176D4] font-semibold hover:underline">Developer</a></div>
     </main>
     <script src="{% static 'js/script.js' %}"></script>
 </body>
