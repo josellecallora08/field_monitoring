@@ -15,7 +15,7 @@ def login(request):
     return render(request, 'loginPage')
 
 def logout(request): 
-    return redirect('login')
+    return redirect('loginpage')
 
 # Pages
 
@@ -31,16 +31,16 @@ def homePage(request):
     { "y": 8921, "label":"Saturday" }
     ]
   
-    return render(request, 'index.html', { "stepcount": stepcount })    
+    return render(request, 'pages/index.html', { "stepcount": stepcount })    
 
 def loginPage(request):
-    return render(request, 'login.html')
+    return render(request, 'pages/login.html')
 
 def aboutPage(request):
-    return render(request, 'about.html')
+    return render(request, 'pages/about.html')
 
 def settingsPage(request):
-    return render(request, 'settings.html')
+    return render(request, 'pages/settings.html')
 
 def notificationsPage(request):
-    return render(request, 'notification.html')
+    return render(request, 'pages/notification.html')
