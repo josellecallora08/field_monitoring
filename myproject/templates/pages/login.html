@@ -96,7 +96,7 @@
                                     </div>
                                 </div>
                                 <div class="flex justify-between w-[95%] m-auto py-2">
-                                    <div class="">
+                                    <div class="w-full flex justify-between items-center">
                                         <div class="flex gap-2">
                                             <input type="checkbox">
                                             <label for="" class="text-sm">
@@ -106,6 +106,13 @@
                                                 </button>
                                             </label>
                                         </div>
+                                        <span class=""></span>
+                                        <a href="{% url 'lark_login' %}" class="flex items-center gap-2">
+                                            <figure>
+                                                <img src="{% static 'images/lark.svg' %}" alt="">
+                                            </figure>
+                                            Login with Lark
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="w-full md:w-3/5 m-auto h-full">
