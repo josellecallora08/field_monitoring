@@ -1,0 +1,212 @@
+<!-- page.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<main class="w-full relative flex flex-col gap-5">
+    <div class="p-3 w-full h-full flex flex-col gap-5">
+        <div
+            class="h-full w-11/12 m-auto md:w-full max-h-10 flex items-center flex-row-reverse md:flex-row justify-between gap-5">
+            <button id="menu-btn" @click="open_menu = !open_menu" class="block p-1">
+                <figure class="size-full max-w-10">
+                    <img src="{% static 'images/menu.svg' %}" class="w-full h-full object-contain" alt="">
+                </figure>
+            </button>
+            <button id="filter-btn" class="z-80 h-full w-fit">
+                <figure class="w-full h-full">
+                    <img src="{% static 'images/filter.svg' %}" class="w-full h-full object-contain" alt="" />
+                </figure>
+            </button>
+            <div id="filter-table"
+                class="hidden left-0 top-0 z-20 absolute backdrop-blur-sm border shadow-md h-full w-full ease-in-out duration-300 bg-gray-400/10 ">
+                <div class="absolute top-16 left-5 w-11/12 md:w-2/5 m-auto z-50 shadow-md rounded-xl h-40 bg-white">
+                </div>
+            </div>
+        </div>
+        <div class="h-fit col-span-1 row-span-1 grid 6 md:grid-cols-6 gap-5">
+            <div class="col-span-1 w-11/12 h-full m-auto md:w-full md:m-0 flex md:flex-col gap-2">
+                <div
+                    class="h-full max-h-32 bg-[#1C406D] text-white font-bold rounded-xl shadow-md flex flex-col items-center justify-center p-5">
+                    <h1 class="text-6xl font-bold text-center size-full flex items-center justify-center">21</h1>
+                    <p
+                        class="font-regular max-h-12 text-center md:text-2xl uppercase flex items-center justify-center font-regular size-full">
+                        Batches</p>
+                </div>
+            </div>
+            <div class="col-span-1 w-11/12 h-full m-auto md:w-full md:m-0 flex flex-row-reverse md:flex-col gap-2">
+                <div
+                    class="h-full max-h-32 bg-[#1C406D] text-white font-bold rounded-xl shadow-md flex flex-col items-center justify-center  p-5">
+                    <h1 class="text-6xl font-bold text-center size-full flex items-center justify-center">21</h1>
+                    <p
+                        class="font-regular max-h-12 text-center md:text-2xl uppercase flex items-center justify-center font-regular size-full">
+                        campaigns</p>
+                </div>
+            </div>
+            <div class="col-span-1 w-11/12 h-full m-auto md:w-full md:m-0 flex flex-row md:flex-col gap-2">
+                <div
+                    class="h-full max-h-32 bg-[#1C406D] text-white font-bold rounded-xl shadow-md flex flex-col items-center justify-center p-5">
+                    <h1 class="text-6xl font-bold text-center size-full flex items-center justify-center">21</h1>
+                    <p
+                        class="font-regular max-h-12 text-center md:text-2xl uppercase flex items-center justify-center font-regular size-full">
+                        printed</p>
+                </div>
+            </div>
+            <div class="col-span-1 w-11/12 h-full m-auto md:w-full md:m-0 flex flex-row-reverse md:flex-col gap-2">
+                <div
+                    class="h-full max-h-32 bg-[#1C406D] text-white font-bold rounded-xl shadow-md flex flex-col items-center justify-center p-5">
+                    <h1 class="text-6xl font-bold text-center size-full flex items-center justify-center">21</h1>
+                    <p
+                        class="font-regular max-h-12 text-center md:text-2xl uppercase flex items-center justify-center font-regular size-full">
+                        released</p>
+                </div>
+            </div>
+            <div class="col-span-1 w-11/12 h-full m-auto md:w-full md:m-0 flex flex-row md:flex-col gap-2">
+                <div
+                    class="h-full max-h-32 bg-[#1C406D] text-white font-bold rounded-xl shadow-md flex flex-col items-center justify-center p-5">
+                    <h1 class="text-6xl font-bold text-center size-full flex items-center justify-center">21</h1>
+                    <p
+                        class="font-regular max-h-12 text-center md:text-2xl uppercase flex items-center justify-center font-regular size-full">
+                        returned</p>
+                </div>
+            </div>
+            <div class="col-span-1 w-11/12 h-full m-auto md:w-full md:m-0 flex flex-row-reverse md:flex-col gap-2">
+                <div
+                    class="h-full max-h-32 bg-[#1C406D] text-white font-bold rounded-xl shadow-md flex flex-col items-center justify-center p-5">
+                    <h1 class="text-6xl font-bold text-center size-full flex items-center justify-center">21</h1>
+                    <p
+                        class="font-regular max-h-12 text-center md:text-2xl uppercase flex items-center justify-center font-regular size-full">
+                        Accounts</p>
+                </div>
+            </div>
+        </div>
+        <div class="h-full w-full flex flex-col col-span-1 row-span-1 md:grid md:grid-cols-3 gap-5">
+            <div class="w-11/12 h-full md:w-full m-auto border col-span-1 rounded-xl shadow-md flex flex-col overflow-hidden">
+                <div class="p-2 px-3 bg-[#1C406D] text-white font-semibold font-regular uppercase">Status Per Account
+                </div>
+                <div class="size-full max-h-[675px] border overflow-auto">
+                    <table class="w-full h-auto border-spacing-0 table-auto">
+                        <thead class="sticky top-0 z-10 bg-white">
+                            <tr>
+                                <td class="font-bold uppercase text-center p-2">BATCH ID</td>
+                                <td class="font-bold uppercase text-center p-2">DATE</td>
+                                <td class="font-bold uppercase text-center p-2">CAMPAIGN</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                            <tr class="[&:nth-child(odd)]:bg-gray-200">
+                                <td class="font-regular uppercase text-center p-2">BPLC2404-1</td>
+                                <td class="font-regular uppercase text-center p-2">p1DL2404-41</td>
+                                <td class="font-regular uppercase text-center p-2">Completed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div
+                class="w-11/12  bg-[#E4EEF9] h-full md:w-full m-auto md:m-0 relative z-10 border col-span-2 rounded-xl shadow-md ease-in-out duration-500 overflow-hidden">
+                
+            </div>
+        </div>
+    </div>
+</main>
+<script>
+    window.onload = function () {
+        var chart = new CanvasJS.Chart("chartContainer", {
+            theme: "light2",
+            title: {
+                text: "Average Accounts per Batch"
+            },
+            axisY: {
+                title: "Number of Steps",
+                stripLines: [{
+                    value: 10000,
+                    label: "Goal"
+                }]
+            },
+            data: [{
+                type: "line",
+                yValueFormatString: "#,### Steps",
+                dataPoints: {{ stepcount| safe }}
+            }]
+          });
+    chart.render();
+        }
+</script>
+{% endblock %}

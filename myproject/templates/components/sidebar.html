@@ -1,0 +1,41 @@
+{% load static %}
+<header :class="{'translate-x-0 w-full z-20 md:w-full shadow-2xl rounded-r-xl':!open_menu}" class="fixed -translate-x-full md:translate-x-0 left-0 md:relative max-w-[300px] min-h-screen md:w-20 ease-in-out delay-0 duration-500 h-full bg-[#1C406D] group">
+    <figure class="h-full min-h-20 max-h-20 w-full flex items-center justify-center">
+        <!-- <img src="{% static 'images/logo.png' %}" class="block group-hover:block md:hidden" :class="{'block':!open_menu}"  alt="logo" />
+        <img src="{% static 'images/small_logo.png' %}"  class="hidden md:block group-hover:hidden object-contain p-2" alt="logo" /> -->
+    </figure>
+    <ul class="w-full font-regular">
+        <li class="p-2">
+            <a href="/" class="flex gap-5 items-center p-3 hover:bg-gray-500/20 rounded-md" :class="{'justify-center':open_menu}">
+                <figure class="w-full h-full max-w-8 max-h-8 ">
+                    <img src="{% static 'images/home.png'%}" class="w-full h-full object-contain" />
+                </figure>
+                <span x-show="!open_menu" class="group-hover:block text-white font-regular" :class="{'block':!open_menu}">Dashboard</span>
+            </a>
+        </li>
+        <li class="p-2">
+            <a href="/notifications" class="flex gap-5 items-center p-3 hover:bg-gray-500/20 rounded-md" :class="{'justify-center':open_menu}">
+                <figure class="w-full h-full max-w-8 max-h-8 ">
+                    <img src="{% static 'images/notification.png'%}" class="w-full h-full object-contain" />
+                </figure>
+                <span x-show="!open_menu" class="group-hover:block text-white font-regular">Notification</span>
+            </a>
+        </li>
+        <li class="p-2">
+            <a href="/settings" class="flex gap-5 items-center p-3 hover:bg-gray-500/20 rounded-md" :class="{'justify-center':open_menu}">
+                <figure class="w-full h-full max-w-8 max-h-8 ">
+                    <img src="{% static 'images/settings.png'%}" class="w-full h-full object-contain" />
+                </figure>
+                <span x-show="!open_menu" class="group-hover:block text-white font-regular">Settings</span>
+            </a>
+        </li>
+        <li class="p-2 md:[&:last-child]:absolute w-full bottom-0">
+            <a href="{% url 'logout' %}" class="flex gap-5 items-center p-3 hover:bg-gray-500/20 rounded-md" :class="{'justify-center':open_menu}">
+                <figure class="w-full h-full max-w-8 max-h-8 ">
+                    <img src="{% static 'images/logout.png'%}" class="w-full h-full object-contain" />
+                </figure>
+                <span x-show="!open_menu" class="group-hover:block text-white font-regular">Logout</span>
+            </a>
+        </li>
+    </ul>
+</header>
